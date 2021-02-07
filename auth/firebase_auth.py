@@ -24,8 +24,8 @@ class FirebaseAuth:
             return {
                 'token':user['idToken']
             }
-        except HTTPError:
-            rais
+        except HTTPError as err:
+            raise 
 
         
     

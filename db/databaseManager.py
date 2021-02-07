@@ -24,3 +24,13 @@ class DatabaseManager:
         )
         student = StudentModel(**response)
         return student
+    
+    def get_schedule(self,firebase_id):
+        response = self.db.findSchedules(
+            firebase_id,
+            {   
+                '_id':0
+            }
+        )
+        schedule = StudentModel(**response)
+        return schedule
