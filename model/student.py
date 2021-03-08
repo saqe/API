@@ -11,9 +11,3 @@ class StudentModel( BaseModel ):
     phone       : str
     timezone    : 'Australia/Sydney'
     country     : str
-    
-    @validator('timezone')
-    def name_must_contain_space(cls, v):
-        if ' ' not in all_timezones:
-            raise ValueError('TimeZone not found')
-        return v.title()
