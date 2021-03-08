@@ -27,7 +27,12 @@ def get_upcomming_classes(user: FirebaseClaims = Depends(get_current_user)):
 @app.get("/student/profile")
 def get_student_profile(user: FirebaseClaims = Depends(get_current_user)):    
     profile=User(user)
-    return dict(profile.getProfile())
+    return dict(user)
+
+@app.put("/student/profile/email")
+def update_student_profile(user: FirebaseClaims = Depends(get_current_user)):
+    profile=User(FirebaseClaims(**{'user_id':'HhSLvQc0aHZYhxxoGpeJCWoB3FD2','email':''}))
+    return profile.getProfile()
 
 # Only for testing and getting the token
 @app.post("/auth/login")
@@ -42,6 +47,13 @@ def login(auth: AuthModel):
     return user
 
 @app.get("/student/test/profile")
-def get_student_profile():
+def get_test_student_profile():
     profile=User(FirebaseClaims(**{'user_id':'HhSLvQc0aHZYhxxoGpeJCWoB3FD2','email':''}))
     return profile.getProfile()
+
+# @app.get("/student/test/profile")
+# def get_student_profile():
+#     profile=User(FirebaseClaims(**{'user_id':'HhSLvQc0aHZYhxxoGpeJCWoB3FD2','email':''}))
+#     return profile.getProfile()
+
+
