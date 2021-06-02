@@ -28,5 +28,5 @@ requests-toolbelt==0.9.1
 rsa==4.7
 six==1.15.0
 starlette==0.13.6
-urllib3==1.26.4
+urllib3==1.26.5
 uvicorn==0.13.3
